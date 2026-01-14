@@ -1,29 +1,34 @@
 import { motion } from 'framer-motion'
 import {
-  SiAmazonwebservices,
-  SiApacheairflow,
-  SiApacheflink,
-  SiApachekafka,
-  SiApachespark,
-  SiKubernetes,
-  SiMysql,
   SiPython,
-  SiScala,
+  SiTableau,
+  SiAmazonwebservices,
   SiSnowflake,
+  SiMysql,
+  SiJira,
 } from 'react-icons/si'
+import {
+  FiDatabase,
+} from 'react-icons/fi'
+import {
+  TbChartHistogram,
+  TbTable,
+  TbShare3,
+  TbBolt,
+} from 'react-icons/tb'
 import { styled } from '../stitches.config'
 
 const tools = [
-  { name: 'SQL', icon: SiMysql, color: '#61DAFB' },
-  { name: 'Scala', icon: SiScala, color: '#F7DF1E' },
-  { name: 'Kafka', icon: SiApachekafka, color: '#3178C6' },
-  { name: 'Spark', icon: SiApachespark, color: '#000000' },
-  { name: 'Airflow', icon: SiApacheairflow, color: '#339933' },
-  { name: 'Python', icon: SiPython, color: '#1572B6' },
-  { name: 'Kubernetes', icon: SiKubernetes, color: '#06B6D4' },
-  { name: 'AWS', icon: SiAmazonwebservices, color: '#F24E1E' },
-  { name: 'Flink', icon: SiApacheflink, color: '#007ACC' },
-  { name: 'Snowflake', icon: SiSnowflake, color: '#FF6C37' },
+  { name: 'Power BI', icon: TbChartHistogram, color: '#F2C811' },
+  { name: 'SQL', icon: SiMysql, color: '#CC2927' },
+  { name: 'Python', icon: SiPython, color: '#3776AB' },
+  { name: 'Excel', icon: TbTable, color: '#217346' },
+  { name: 'Tableau', icon: SiTableau, color: '#E97627' },
+  { name: 'n8n', icon: TbBolt, color: '#EA4B71' },
+  { name: 'SharePoint', icon: TbShare3, color: '#0078D4' },
+  { name: 'AWS', icon: SiAmazonwebservices, color: '#FF9900' },
+  { name: 'Snowflake', icon: SiSnowflake, color: '#29B5E8' },
+  { name: 'Jira', icon: SiJira, color: '#0052CC' },
 ]
 
 export default function Toolbox() {
