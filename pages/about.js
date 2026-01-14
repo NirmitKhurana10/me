@@ -17,14 +17,13 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 export async function getStaticProps() {
   const meta = {
-    title: 'About // Parth Desai',
+    title: 'About // Nirmit Khurana',
     description: `
-      Parth Desai is a results-driven Data Engineer with 2+ years of experience building scalable ETL and real-time pipelines.
-      He specializes in Spark and Kafka and led the AppsFlyer migration that reduced latency by 95% and saved $1.1M.
-      This summer he worked on Kafka cost attribution and ownership pipelines at Netflix, delivering production-ready data solutions.
-      Parth focuses on reliable, maintainable systems that drive measurable business impact.
+      Nirmit Khurana is a Business Intelligence & Data Analytics Professional with 2+ years of experience optimizing retail and financial operations through scalable BI pipelines and automated workflows.
+      By leveraging SQL, Power BI, and n8n, he has successfully improved kitchen forecast accuracy by 20%, reduced annual operational waste by CAD 120K (15%), and reclaimed over 25 hours of monthly coordination time.
+      Nirmit excels at bridging the gap between technical execution and executive strategy, ensuring 100% data integrity and full compliance across complex, high-volume environments.
     `,
-    tagline: 'Build. Code. Deliver.',
+    tagline: 'Turn Data Into Impact.',
     image: '/static/images/about-bw.jpg',
     primaryColor: 'pink',
     secondaryColor: 'purple',
@@ -46,7 +45,7 @@ function About(props) {
       <Container>
         <Section>
           <Image
-            alt="Parth"
+            alt="Nirmit"
             src="/static/images/avatar.jpg"
             width="336"
             height="336"
@@ -62,27 +61,20 @@ function About(props) {
               '@bp2': { marginTop: '-6px' },
             }}
           >
-            <strong>Hey, I'm Parth Desai</strong>
-            <Pronunciation />I once bricked an iPod at 13 while jailbreaking
-            it—igniting my lifelong obsession with tech. Now, I transform raw
-            data into meaningful impact.
+            <strong>Hey, I'm Nirmit Khurana</strong>
+            <Pronunciation />It all started with a single blinking LED. I remember the rush of writing my first Arduino script and seeing that tiny light pulse for the first time—it was my first taste of controlling logic. Today, I've traded LEDs for massive datasets. I'm Nirmit, a Data Analyst who builds pipelines and dashboards to turn digital chaos into clear business strategies.
           </Paragraph>
           <Paragraph>
             I love{' '}
             <strong>
-              <a href="https://www.parthdesai.site/contact" target="_blank">
+              <a href="https://nirmitkhurana.com/contact" target="_blank">
                 connecting
               </a>
             </strong>{' '}
-            with fellow nerds over the weekend in <strong>San Francisco</strong>
-            . When I'm not working, you'll find me{' '}
-            <strong>
-              <a href="https://x.com/_ParthDesai_" target="_blank">
-                tweeting
-              </a>
-            </strong>
-            , losing chess games, solving crosswords, and binge-watching
-            fascinating video essays.
+            with fellow data enthusiasts in <strong>Toronto</strong>
+            . When I'm not deep in SQL, you'll find me on the{' '}
+            <strong>football pitch</strong> or in the <strong>kitchen</strong>.
+            I take my cooking seriously—I don't just follow recipes, I experiment with flavors the same way I experiment with data models.
           </Paragraph>
           <Paragraph>
             <strong>
@@ -93,10 +85,10 @@ function About(props) {
                 iterations={2}
                 strokeWidth={3}
                 multiline={true}
-                color="#E50914"
+                color="#FFDB00"
                 show={true}
               >
-                Currently, you'll find me at Netflix.
+                Currently, you'll find me at IKEA.
               </RoughNotation>
             </strong>
           </Paragraph>
@@ -144,7 +136,7 @@ function About(props) {
             as="a"
             download
             role="button"
-            href="https://docs.google.com/document/d/19lnmad43-oLgP8UrADQt_p3l0cQz7gpDQGiIQjxGg38/edit?usp=sharing"
+            href="https://drive.google.com/file/d/1DJoy-EstrHLPuiSeqLj6wV8e4f49iG9q/view?usp=share_link"
             target="_blank"
             style={btnStyle}
             onClick={downloadResume}
@@ -187,8 +179,8 @@ function About(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://parthdesai.site/about" property="og:url" />
-        <meta content={`https://parthdesai.site${image}`} property="og:image" />
+        <meta content="https://nirmitkhurana.com/about" property="og:url" />
+        <meta content={`https://nirmitkhurana.com${image}`} property="og:image" />
       </Head>
 
       {renderIntro()}

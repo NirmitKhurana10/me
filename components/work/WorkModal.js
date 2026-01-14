@@ -21,7 +21,7 @@ export default function WorkModal({ work, isOpen, onClose, getDuration }) {
       <MetaInfo>
         <span>
           {format(parseISO(work.startDate), 'MMM yyyy')} -{' '}
-          {work.endDate
+          {work.endDate && work.endDate !== 'Present'
             ? format(parseISO(work.endDate), 'MMM yyyy')
             : 'Present'}
           {' • '}

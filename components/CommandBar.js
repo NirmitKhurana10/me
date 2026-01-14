@@ -95,7 +95,7 @@ export default function CommandBar(props) {
       keywords: 'view-source',
       section: 'General',
       perform: () =>
-        window.open('https://github.com/pycoder2000/portfolio', '_blank'),
+        window.open('https://github.com/Nirmitkhurana10/portfolio', '_blank'),
       icon: (
         <Lottie
           lottieRef={sourceRef}
@@ -141,114 +141,12 @@ export default function CommandBar(props) {
       ),
     },
     {
-      id: 'articles',
-      name: 'Articles',
-      shortcut: ['g', 'b'],
-      keywords: 'go-articles',
+      id: 'skills',
+      name: 'Skills',
+      shortcut: ['g', 's'],
+      keywords: 'go-skills',
       section: 'Go To',
-      perform: () => router.push('/articles'),
-      icon: (
-        <Lottie
-          lottieRef={articlesRef}
-          style={iconSize}
-          animationData={articlesIcon}
-          loop={false}
-          autoplay={false}
-        />
-      ),
-    },
-    {
-      id: 'projects',
-      name: 'Projects',
-      shortcut: ['g', 'p'],
-      keywords: 'go-projects',
-      section: 'Go To',
-      perform: () => router.push('/projects'),
-      icon: (
-        <Lottie
-          lottieRef={projectsRef}
-          style={iconSize}
-          animationData={projectsIcon}
-          loop={false}
-          autoplay={false}
-        />
-      ),
-    },
-    {
-      id: 'work',
-      name: 'Work',
-      shortcut: ['g', 'w'],
-      keywords: 'go-work',
-      section: 'Go To',
-      perform: () => router.push('/work'),
-      icon: (
-        <Lottie
-          lottieRef={workRef}
-          style={iconSize}
-          animationData={workIcon}
-          loop={false}
-          autoplay={false}
-        />
-      ),
-    },
-    // {
-    //   id: 'podcasts',
-    //   name: 'Podcasts',
-    //   shortcut: ['g', 'c'],
-    //   keywords: 'go-podcasts',
-    //   section: 'Go To',
-    //   perform: () => router.push('/podcasts'),
-    //   icon: (
-    //     <Lottie
-    //       lottieRef={podcastsRef}
-    //       style={iconSize}
-    //       animationData={podcastsIcon}
-    //       loop={false}
-    //       autoplay={false}
-    //     />
-    //   ),
-    // },
-    // {
-    //   id: 'investing',
-    //   name: 'Investing',
-    //   shortcut: ['g', 'i'],
-    //   keywords: 'go-investing',
-    //   section: 'Go To',
-    //   perform: () => router.push('/investing'),
-    //   icon: (
-    //     <Lottie
-    //       lottieRef={investingRef}
-    //       style={iconSize}
-    //       animationData={investingIcon}
-    //       loop={false}
-    //       autoplay={false}
-    //     />
-    //   ),
-    // },
-    {
-      id: 'tweets',
-      name: 'Tweets',
-      shortcut: ['g', 't'],
-      keywords: 'go-tweets',
-      section: 'Go To',
-      perform: () => router.push('/tweets'),
-      icon: (
-        <Lottie
-          lottieRef={tweetsRef}
-          style={iconSize}
-          animationData={tweetsIcon}
-          loop={false}
-          autoplay={false}
-        />
-      ),
-    },
-    {
-      id: 'uses',
-      name: 'Uses',
-      shortcut: ['g', 'u'],
-      keywords: 'go-uses',
-      section: 'Go To',
-      perform: () => router.push('/uses'),
+      perform: () => router.push('/skills'),
       icon: (
         <Lottie
           lottieRef={usesRef}
@@ -260,12 +158,46 @@ export default function CommandBar(props) {
       ),
     },
     {
-      id: 'connections',
-      name: 'Connections',
+      id: 'certifications',
+      name: 'Certifications',
       shortcut: ['g', 'c'],
-      keywords: 'go-connections',
+      keywords: 'go-certifications',
       section: 'Go To',
-      perform: () => router.push('/connections'),
+      perform: () => router.push('/certifications'),
+      icon: (
+        <Lottie
+          lottieRef={aboutRef}
+          style={iconSize}
+          animationData={aboutIcon}
+          loop={false}
+          autoplay={false}
+        />
+      ),
+    },
+    {
+      id: 'recipes',
+      name: 'Recipes',
+      shortcut: ['g', 'r'],
+      keywords: 'go-recipes',
+      section: 'Go To',
+      perform: () => router.push('/recipes'),
+      icon: (
+        <Lottie
+          lottieRef={articlesRef}
+          style={iconSize}
+          animationData={articlesIcon}
+          loop={false}
+          autoplay={false}
+        />
+      ),
+    },
+    {
+      id: 'ideas',
+      name: 'Ideas',
+      shortcut: ['g', 'i'],
+      keywords: 'go-ideas',
+      section: 'Go To',
+      perform: () => router.push('/ideas'),
       icon: (
         <Lottie
           lottieRef={connectionsRef}
@@ -279,7 +211,7 @@ export default function CommandBar(props) {
     {
       id: 'credits',
       name: 'Credits',
-      shortcut: ['g', 'r'],
+      shortcut: ['g', 'x'],
       keywords: 'go-credits',
       section: 'Go To',
       perform: () => router.push('/credits'),

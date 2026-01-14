@@ -12,8 +12,8 @@ import { keyframes, styled } from '../stitches.config'
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Parth Desai',
-      description: 'Obsessed with data',
+      title: 'Nirmit Khurana',
+      description: 'I turn coffee ☕️ into dashboards 📈 and insights 🔢 into impact 🧨',
       image: '/static/images/home-bw.jpg',
     },
   }
@@ -107,9 +107,7 @@ export default function Index(props) {
   const { title, description, image } = props
   const [isHovering, setIsHovering] = useState(false)
   const companies = [
-    { name: 'Netflix', color: '#E50914' },
-    { name: 'Accenture', color: '#A100FF' },
-    { name: 'Glassdoor', color: '#0CAA41' },
+    { name: 'IKEA', color: '#FFDB00' },
   ]
 
   return (
@@ -119,8 +117,8 @@ export default function Index(props) {
         <meta content={title} property="og:title" />
         <meta content={description} name="description" />
         <meta content={description} property="og:description" />
-        <meta content="https://parthdesai.site" property="og:url" />
-        <meta content={`https://parthdesai.site${image}`} property="og:image" />
+        <meta content="https://nirmitkhurana.com" property="og:url" />
+        <meta content={`https://nirmitkhurana.com${image}`} property="og:image" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -150,7 +148,7 @@ export default function Index(props) {
                 onMouseLeave={() => setIsHovering(false)}
                 style={{ position: 'relative', zIndex: 2 }}
               >
-                Data Engineer at{' '}
+                Data Analyst at{' '}
                 <AnimatedCompany
                   companies={companies}
                   data-ispaused={isHovering}

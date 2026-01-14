@@ -9,24 +9,14 @@ export default function Footer() {
       icon: 'ri-mail-line',
     },
     {
-      title: 'Twitter',
-      url: 'https://x.com/_ParthDesai_',
-      icon: 'ri-twitter-line',
-    },
-    {
       title: 'GitHub',
-      url: 'https://github.com/pycoder2000',
+      url: 'https://github.com/Nirmitkhurana10',
       icon: 'ri-github-line',
     },
     {
       title: 'linkedin',
-      url: 'https://www.linkedin.com/in/desaiparth2000',
+      url: 'https://www.linkedin.com/in/nirmit-khurana-3852841a6/',
       icon: 'ri-linkedin-line',
-    },
-    {
-      title: 'Medium',
-      url: 'https://medium.com/@desaiparth2000',
-      icon: 'ri-medium-line',
     },
     {
       title: 'Credits',

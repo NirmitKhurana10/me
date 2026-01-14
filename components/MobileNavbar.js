@@ -18,12 +18,12 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 const navItems = [
   { path: '/about', icon: aboutIcon, label: 'About' },
-  { path: '/articles', icon: articlesIcon, label: 'Articles' },
   { path: '/projects', icon: projectsIcon, label: 'Projects' },
   { path: '/work', icon: workIcon, label: 'Work' },
-  { path: '/uses', icon: usesIcon, label: 'Uses' },
-  { path: '/tweets', icon: tweetsIcon, label: 'Tweets' },
-  { path: '/connections', icon: connectionsIcon, label: 'Connections' },
+  { path: '/skills', icon: usesIcon, label: 'Skills' },
+  { path: '/certifications', icon: aboutIcon, label: 'Certifications' },
+  { path: '/recipes', icon: articlesIcon, label: 'Recipes' },
+  { path: '/ideas', icon: connectionsIcon, label: 'Ideas' },
   { path: '/contact', icon: emailIcon, label: 'Contact' },
 ]
 
