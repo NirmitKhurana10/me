@@ -1,4 +1,4 @@
-const categories = [
+const skills = [
     {
         name: 'Data Visualization & Business Intelligence',
         description: 'Creating actionable insights through interactive dashboards and advanced analytics.',
@@ -16,13 +16,14 @@ const categories = [
         skills: [
             '<strong>PostgreSQL</strong> (Stored Procedures, Triggers, Query Optimization)',
             '<strong>Microsoft SQL Server</strong> (T-SQL, Database Administration)',
-            '<strong>ETL</strong> Process Design & Implementation',
+            'ETL Process Design & Implementation',
             'Data Cleansing Workflows & Quality Control',
             '<strong>n8n</strong> Workflow Automation',
             'Medallion Architecture (Bronze/Silver/Gold Layers)',
             'Data Warehouse Design (Star Schema, Snowflake Schema)',
-            '<strong>Azure Data Factory</strong>, <strong>AWS S3</strong>',
-            'API Integration & RESTful Services',
+            '<strong>Azure Data Factory</strong>',
+            '<strong>Supabase</strong>',
+            'API Integration & RESTful Services'
         ],
     },
     {
@@ -33,7 +34,7 @@ const categories = [
             '<strong>Advanced Excel</strong> (VBA/Macros, Power Query, Complex Formulas)',
             '<strong>SQL</strong> (Complex Queries, Window Functions, CTEs)',
             'Data Analysis & Statistical Modeling',
-            'Predictive Analytics & Machine Learning Basics',
+            'Predictive Analytics & Machine Learning Algorithms',
         ],
     },
     {
@@ -45,9 +46,7 @@ const categories = [
             'Financial Modeling & Valuation',
             '<strong>Anti-Money Laundering (AML)</strong> Transaction Monitoring',
             '<strong>Know Your Customer (KYC)</strong> Processes',
-            'Regulatory Compliance Reporting (<strong>FINRA</strong>, <strong>SEC</strong>)',
             'Risk Assessment & Fraud Detection',
-            'SAR (Suspicious Activity Report) Filing',
         ],
     },
     {
@@ -77,4 +76,4 @@ const categories = [
     },
 ]
 
-export default categories
+export default skills

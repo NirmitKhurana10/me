@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import categories from '../data/skills'
+import skills from '../data/skills'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
 import { motion } from 'framer-motion'
@@ -11,7 +11,7 @@ export async function getStaticProps() {
         title: 'Skills // Nirmit Khurana',
         description:
             "A comprehensive overview of my <strong>technical skills</strong> and <strong>professional competencies</strong> in Data Analytics, Business Intelligence, and Data Engineering.",
-        tagline: 'Analyze. Transform. Deliver.',
+        tagline: 'Skills. Solutions. Success.',
         image: '/static/images/skills-bw.jpg',
         primaryColor: 'cyan',
         secondaryColor: 'green',
@@ -24,7 +24,7 @@ function Skills(props) {
     const { title, description, image } = props
 
     const renderAll = () => {
-        return categories.map((category, index) => (
+        return skills.map((skill, index) => (
             <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
@@ -36,11 +36,11 @@ function Skills(props) {
                     stiffness: 60,
                 }}
             >
-                <CategorySection>
-                    <CategoryHeader>{category.name}</CategoryHeader>
-                    <CategoryDescription>{category.description}</CategoryDescription>
+                <SkillSection>
+                    <SkillHeader>{skill.name}</SkillHeader>
+                    <SkillDescription>{skill.description}</SkillDescription>
                     <SkillsList>
-                        {category.skills.map((skill, iIndex) => (
+                        {skill.skills.map((skill, iIndex) => (
                             <motion.li
                                 key={iIndex}
                                 initial={{ opacity: 0, x: -20 }}
@@ -53,7 +53,7 @@ function Skills(props) {
                             />
                         ))}
                     </SkillsList>
-                </CategorySection>
+                </SkillSection>
             </motion.div>
         ))
     }
@@ -76,7 +76,7 @@ function Skills(props) {
     )
 }
 
-const CategorySection = styled('div', {
+const SkillSection = styled('div', {
     marginBottom: '50px',
 
     '&:last-child': {
@@ -84,7 +84,7 @@ const CategorySection = styled('div', {
     },
 })
 
-const CategoryHeader = styled('h2', {
+const SkillHeader = styled('h2', {
     fontSize: '28px',
     fontWeight: '600',
     color: '$primary',
@@ -96,7 +96,7 @@ const CategoryHeader = styled('h2', {
     },
 })
 
-const CategoryDescription = styled('p', {
+const SkillDescription = styled('p', {
     fontSize: '16px',
     color: '$secondary',
     marginTop: '8px',

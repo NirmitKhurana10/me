@@ -61,7 +61,7 @@ export default function WorkTimeline({ work, onClick, getDuration, index }) {
 
 const TimelineItem = styled(motion.div, {
     position: 'relative',
-    paddingLeft: '45px',
+    paddingLeft: '65px',
     paddingBottom: '24px',
 
     '&:last-child': {
@@ -75,8 +75,8 @@ const TimelineItem = styled(motion.div, {
 
 const TimelineLine = styled('div', {
     position: 'absolute',
-    left: '14px',
-    top: '32px',
+    left: '22px',
+    top: '45px',
     bottom: '-12px',
     width: '1px',
     background: '$secondary',
@@ -87,8 +87,8 @@ const TimelineDot = styled('div', {
     position: 'absolute',
     left: '0',
     top: '12px',
-    width: '28px',
-    height: '28px',
+    width: '45px',
+    height: '45px',
     borderRadius: '50%',
     background: '$hover',
     border: '2px solid $primary',
@@ -99,10 +99,10 @@ const TimelineDot = styled('div', {
 })
 
 const CompanyLogo = styled('img', {
-    width: '18px',
-    height: '18px',
+    width: '32px',
+    height: '32px',
     objectFit: 'contain',
-    borderRadius: '3px',
+    borderRadius: '4px',
 })
 
 const TimelineContent = styled('div', {
