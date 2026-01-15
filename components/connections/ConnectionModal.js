@@ -2,14 +2,12 @@ import { format } from 'date-fns'
 import { AnimatePresence, motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import React, { useRef } from 'react'
-import linkedinIcon from '../../public/static/icons/linkedin.json'
-import tweetsIcon from '../../public/static/icons/tweets.json'
+import { SiLinkedin } from 'react-icons/si'
+import { HiExternalLink } from 'react-icons/hi'
 import { styled } from '../../stitches.config'
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 export default function ConnectionModal({ person, isOpen, onClose }) {
-  const linkedinRef = useRef(null)
-  const tweetsRef = useRef(null)
   const iconSize = { width: 24, height: 24 }
 
   if (!person) return null
@@ -37,18 +35,14 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
             <Name>{person.name}</Name>
             <Title>{person.title}</Title>
             <Company>{person.company}</Company>
-            {(person.location || person.metOn) && (
+            {person.issued && (
               <LocationMeta>
-                {person.location && <span>{person.location}</span>}
-                {person.location && person.metOn && <Dot>•</Dot>}
-                {person.metOn && (
-                  <span>{format(new Date(person.metOn), 'MMM dd, yyyy')}</span>
-                )}
+                <span>Issued: {person.issued}</span>
               </LocationMeta>
             )}
             <Meta>
-              <Status status={person.status}>
-                {person.status === 'Met' ? 'Met' : 'Want to Meet'}
+              <Status data-status={person.status}>
+                {person.status}
               </Status>
             </Meta>
             {person.tags?.length > 0 && (
@@ -67,40 +61,26 @@ export default function ConnectionModal({ person, isOpen, onClose }) {
               </Tags>
             )}
             <Links>
-              {(person.linkedin || person.linkedInLink) && (
+              {/* LinkedIn icon only for Completed certifications */}
+              {person.status === 'Completed' && (person.linkedin || person.linkedInLink) && (
                 <LinkIcon
                   href={person.linkedin || person.linkedInLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  onMouseEnter={() => linkedinRef.current?.play()}
-                  onMouseLeave={() => linkedinRef.current?.stop()}
                 >
-                  <Lottie
-                    lottieRef={linkedinRef}
-                    style={iconSize}
-                    animationData={linkedinIcon}
-                    loop={true}
-                    autoplay={false}
-                  />
+                  <SiLinkedin size={24} />
                 </LinkIcon>
               )}
+              {/* Link icon for all certifications with certLink */}
               {(person.twitter || person.certLink) && (
                 <LinkIcon
                   href={person.twitter || person.certLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={person.certLink ? "Certificate" : "Twitter"}
-                  onMouseEnter={() => tweetsRef.current?.play()}
-                  onMouseLeave={() => tweetsRef.current?.stop()}
                 >
-                  <Lottie
-                    lottieRef={tweetsRef}
-                    style={iconSize}
-                    animationData={tweetsIcon}
-                    loop={true}
-                    autoplay={false}
-                  />
+                  <HiExternalLink size={22} />
                 </LinkIcon>
               )}
             </Links>
@@ -198,19 +178,26 @@ const Meta = styled('div', {
 })
 
 const Status = styled('span', {
-  padding: '2px 10px',
+  padding: '4px 12px',
   borderRadius: '999px',
+  border: '1px solid',
   fontWeight: 600,
   fontSize: '12px',
-  background: 'linear-gradient(90deg, #80ffea33, #9580ff33)',
-  color: '$primary',
-  variants: {
-    status: {
-      met: { background: 'linear-gradient(90deg, #80ffea33, #8aff8033)' },
-      'want-to-meet': {
-        background: 'linear-gradient(90deg, #9580ff33, #ff80bf33)',
-      },
-    },
+
+  '&[data-status="Completed"]': {
+    background: '#10b981',
+    color: 'white',
+    borderColor: '#10b981',
+  },
+  '&[data-status="In Progress"]': {
+    background: '#3b82f6',
+    color: 'white',
+    borderColor: '#3b82f6',
+  },
+  '&[data-status="To Be Done"]': {
+    background: '#f59e0b',
+    color: 'white',
+    borderColor: '#f59e0b',
   },
 })
 

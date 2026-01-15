@@ -24,8 +24,8 @@ export default function ConnectionCard({ person, onClick }) {
           <Name>{person.name}</Name>
           <Title>{person.title}</Title>
           <Company>{person.company}</Company>
-          <Status status={person.status}>
-            {person.status === 'Met' ? 'Met' : 'Want to Meet'}
+          <Status data-status={person.status}>
+            {person.status}
           </Status>
         </Body>
       </Card>
@@ -89,18 +89,37 @@ const Company = styled('p', {
 
 const Status = styled('button', {
   appearance: 'none',
-  border: '1px solid $primary',
+  border: '1px solid',
   borderRadius: '5px',
   marginTop: '8px',
   padding: '4px 12px',
   fontSize: '13px',
   fontWeight: 600,
-  background: 'transparent',
-  color: '$primary',
   cursor: 'pointer',
   transition: 'all $duration ease-in-out',
-  '&:hover': {
-    background: '$primary',
-    color: '$background',
+
+  '&[data-status="Completed"]': {
+    background: '#10b981',
+    color: 'white',
+    borderColor: '#10b981',
+    '&:hover': {
+      background: '#059669',
+    },
+  },
+  '&[data-status="In Progress"]': {
+    background: '#3b82f6',
+    color: 'white',
+    borderColor: '#3b82f6',
+    '&:hover': {
+      background: '#2563eb',
+    },
+  },
+  '&[data-status="To Be Done"]': {
+    background: '#f59e0b',
+    color: 'white',
+    borderColor: '#f59e0b',
+    '&:hover': {
+      background: '#d97706',
+    },
   },
 })

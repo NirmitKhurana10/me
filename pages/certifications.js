@@ -23,48 +23,97 @@ export async function getStaticProps() {
 
 // Certification data with the structure you requested
 const certifications = [
+    // Completed Certifications
     {
-        name: 'Microsoft Certified: Data Analyst Associate',
+        name: 'Tableau Desktop Qualified Associate Certification',
+        title: 'Data Visualization',
+        company: 'LinkedIn',
+        status: 'Completed',
+        tags: ['Tableau', 'Data Visualization', 'Analytics'],
+        issued: '2025',
+        certLink: 'https://www.linkedin.com/learning/certificates/',
+        linkedInLink: 'https://www.linkedin.com/feed/',
+    },
+    {
+        name: 'Data Analytics Essentials',
         title: 'Data Analytics',
+        company: 'CISCO',
+        status: 'Completed',
+        tags: ['Data Analytics', 'Networking', 'Fundamentals'],
+        issued: '2025',
+        certLink: 'https://www.cisco.com/c/en/us/training-events/training-certifications/certifications.html',
+        linkedInLink: 'https://www.linkedin.com/feed/',
+    },
+    {
+        name: 'JIRA Project Management',
+        title: 'Project Management',
+        company: 'GreatLearning',
+        status: 'Completed',
+        tags: ['JIRA', 'Project Management', 'Agile'],
+        issued: '2025',
+        certLink: 'https://www.mygreatlearning.com/',
+        linkedInLink: 'https://www.linkedin.com/feed/',
+    },
+    {
+        name: 'Introduction to Programming Using Python',
+        title: 'Programming',
+        company: 'HackerRank',
+        status: 'Completed',
+        tags: ['Python', 'Programming', 'Coding'],
+        issued: '2025',
+        certLink: 'https://www.hackerrank.com/skills-verification',
+        linkedInLink: 'https://www.linkedin.com/feed/',
+    },
+    {
+        name: 'Introduction to Data Analytics',
+        title: 'Data Analytics',
+        company: 'SimpliLearning',
+        status: 'Completed',
+        tags: ['Data Analytics', 'Fundamentals', 'Introduction'],
+        issued: '2025',
+        certLink: 'https://www.simplilearn.com/',
+        linkedInLink: 'https://www.linkedin.com/feed/',
+    },
+    // In Progress
+    {
+        name: 'IBM Data Science Professional',
+        title: 'Data Science',
+        company: 'IBM',
+        status: 'In Progress',
+        tags: ['Python', 'Machine Learning', 'Data Science'],
+        issued: 'Expected 2026',
+        certLink: 'https://www.coursera.org/professional-certificates/ibm-data-science',
+        linkedInLink: null,
+    },
+    // To Be Done
+    {
+        name: 'Microsoft Power BI Certificate (PL-300)',
+        title: 'Business Intelligence',
         company: 'Microsoft',
-        status: 'Met', // Use 'Met' for completed/closed certifications
+        status: 'To Be Done',
         tags: ['Power BI', 'DAX', 'Data Modeling'],
-        location: 'Online',
-        metOn: '2024-01-15',
-        certLink: 'https://learn.microsoft.com/en-us/certifications/data-analyst-associate/',
-        linkedInLink: 'https://www.linkedin.com/feed/update/your-cert-post',
+        issued: 'Expected 2026',
+        certLink: 'https://learn.microsoft.com/en-us/certifications/exams/pl-300/',
+        linkedInLink: null,
     },
     {
         name: 'Google Data Analytics Professional Certificate',
         title: 'Data Analytics',
         company: 'Google (Coursera)',
-        status: 'Met', // Completed/Done
-        tags: ['R', 'SQL', 'Tableau', 'Data Visualization'],
-        location: 'Online',
-        metOn: '2023-12-10',
+        status: 'To Be Done',
+        tags: ['SQL', 'Tableau', 'Data Analysis', 'R'],
+        issued: 'Expected 2026',
         certLink: 'https://www.coursera.org/professional-certificates/google-data-analytics',
-        linkedInLink: 'https://www.linkedin.com/feed/update/your-cert-post',
-    },
-    {
-        name: 'AWS Certified Data Analytics',
-        title: 'Cloud Data Analytics',
-        company: 'Amazon Web Services',
-        status: 'Want to Meet', // Use 'Want to Meet' for needed/open certifications
-        tags: ['AWS', 'Big Data', 'Cloud'],
-        location: 'Online',
-        metOn: null,
-        certLink: 'https://aws.amazon.com/certification/certified-data-analytics-specialty/',
         linkedInLink: null,
     },
     {
-        name: 'Tableau Desktop Specialist',
-        title: 'Data Visualization',
-        company: 'Tableau',
-        status: 'Want to Meet', // Needed/Open
-        tags: ['Tableau', 'Visualization', 'Dashboard'],
-        location: 'Online',
-        metOn: null,
-        certLink: 'https://www.tableau.com/learn/certification/desktop-specialist',
+        name: 'Microsoft Azure Data Scientist Associate (DP-100)',
+        title: 'Cloud Data Science',
+        company: 'Microsoft',
+        status: 'To Be Done',
+        tags: ['Azure', 'Machine Learning', 'Cloud'],
+        issued: 'Expected 2026',
+        certLink: 'https://learn.microsoft.com/en-us/certifications/exams/dp-100/',
         linkedInLink: null,
     },
 ]
@@ -91,7 +140,7 @@ function Certifications() {
         setSelectedCert(null)
     }
 
-    const description = `My professional certifications that validate my expertise in <strong>Data Analytics</strong>, <strong>Business Intelligence</strong>, and related technologies. Completed certifications are marked as "Met" while certifications I'm working towards are marked as "Want to Meet".`
+    const description = `My professional certifications that validate my expertise in <strong>Data Analytics</strong>, <strong>Business Intelligence</strong>, and related technologies. Certifications are marked as "Completed", "In Progress", or "To Be Done".`
 
     return (
         <>
