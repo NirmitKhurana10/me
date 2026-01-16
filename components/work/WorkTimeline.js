@@ -125,7 +125,7 @@ const TimelineHeader = styled('div', {
 })
 
 const DateRange = styled('div', {
-    fontSize: '11px',
+    fontSize: '13px',
     color: '$secondary',
     fontWeight: '400',
     letterSpacing: '0.3px',
@@ -137,7 +137,7 @@ const Duration = styled('span', {
 })
 
 const JobTitle = styled('h3', {
-    fontSize: '16px',
+    fontSize: '18px',
     fontWeight: '600',
     color: '$primary',
     margin: '4px 0 2px 0',
@@ -145,14 +145,14 @@ const JobTitle = styled('h3', {
 })
 
 const Company = styled('h4', {
-    fontSize: '13px',
+    fontSize: '16px',
     fontWeight: '400',
     color: '$secondary',
     margin: '0 0 2px 0',
 })
 
 const Location = styled('p', {
-    fontSize: '11px',
+    fontSize: '13px',
     color: '$secondary',
     margin: '0 0 8px 0',
     opacity: 0.6,
