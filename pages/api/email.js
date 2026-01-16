@@ -92,10 +92,10 @@ export default async function sendEmail(req, res) {
 
     // All checks passed - send email
     await resend.sendEmail({
-      from: 'parthdesai.site <website@parthdesai.site>',
+      from: 'nirmitkhurana.site <website@nirmitkhurana.site>',
       to: process.env.RESEND_DESTINATION_EMAIL,
       replyTo: data.email,
-      subject: `${data.name} - via parthdesai.site`,
+      subject: `${data.name} - via nirmitkhurana.site`,
       react: <EmailTemplate {...data} />,
     })
 

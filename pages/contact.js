@@ -44,7 +44,7 @@ function Contact(props) {
     try {
       const isProd = process.env.NODE_ENV === 'production'
       const base = isProd
-        ? 'https://www.parthdesai.site'
+        ? 'https://www.nirmitkhurana.site'
         : 'http://localhost:3000'
 
       // Get honeypot field value (should be empty)
@@ -102,8 +102,8 @@ function Contact(props) {
         <meta content={title} property="og:title" />
         <meta content={stripHtml(description)} name="description" />
         <meta content={stripHtml(description)} property="og:description" />
-        <meta content="https://parthdesai.site/contact" property="og:url" />
-        <meta content={`https://parthdesai.site${image}`} property="og:image" />
+        <meta content="https://nirmitkhurana.site/contact" property="og:url" />
+        <meta content={`https://nirmitkhurana.site${image}`} property="og:image" />
       </Head>
 
       <Box>
