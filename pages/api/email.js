@@ -86,7 +86,7 @@ export default async function sendEmail(req, res) {
     // 7. Additional check: message should have some meaningful content
     // Reject messages that are just random characters
     const messageWords = data.message.trim().split(/\s+/)
-    if (messageWords.length < 3) {
+    if (messageWords.length < 2) {
       return res.status(400).json({ message: 'Message too short' })
     }
 
