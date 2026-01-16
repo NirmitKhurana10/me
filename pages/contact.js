@@ -42,15 +42,10 @@ function Contact(props) {
     setIsSubmitting(true)
 
     try {
-      const isProd = process.env.NODE_ENV === 'production'
-      const base = isProd
-        ? 'https://www.nirmitkhurana.site'
-        : 'http://localhost:3001'
-
       // Get honeypot field value (should be empty)
       const honeypotValue = e.target.website?.value || ''
 
-      const response = await fetch(`${base}/api/email`, {
+      const response = await fetch('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
