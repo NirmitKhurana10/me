@@ -85,7 +85,7 @@ function About(props) {
                 iterations={2}
                 strokeWidth={3}
                 multiline={true}
-                color="#FFDB00"
+                color="#FFC107"
                 show={true}
               >
                 Currently, you'll find me at IKEA.
