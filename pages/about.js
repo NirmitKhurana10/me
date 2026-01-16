@@ -4,7 +4,6 @@ import Image from 'next/image'
 import React from 'react'
 import { RoughNotation } from 'react-rough-notation'
 import { ButtonPrimary } from '../components/ButtonPrimary'
-import Pronunciation from '../components/Pronunciation'
 import Toast from '../components/Toast'
 import Toolbox from '../components/Toolbox'
 import Base from '../layouts/Base'
@@ -61,8 +60,8 @@ function About(props) {
               '@bp2': { marginTop: '-6px' },
             }}
           >
-            <strong>Hey, I'm Nirmit Khurana</strong>
-            <Pronunciation />It all started with a single blinking LED. I remember the rush of writing my first Arduino script and seeing that tiny light pulse for the first time—it was my first taste of controlling logic. Today, I've traded LEDs for massive datasets. I'm Nirmit, a Data Analyst who builds pipelines and dashboards to turn digital chaos into clear business strategies.
+            <strong>Hey, I'm Nirmit Khurana</strong>{' '}
+            It all started with a single blinking LED. I remember the rush of writing my first Arduino script and seeing that tiny light pulse for the first time—it was my first taste of controlling logic. Today, I've traded LEDs for massive datasets. I'm Nirmit, a Data Analyst who builds pipelines and dashboards to turn digital chaos into clear business strategies.
           </Paragraph>
           <Paragraph>
             I love{' '}
