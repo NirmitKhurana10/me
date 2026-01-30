@@ -52,6 +52,34 @@ const items = [
       'Orchestrated a centralized HR analytics suite in Tableau to monitor uniform consumption patterns, providing leadership with visibility to <b>optimize a CAD 60K annual resource allocation budget and reducing procurement overhead by 12%</b> through predictive trend analysis.',
     ],
   },
+  {
+    title: 'E-commerce Business Intelligence & Analytics Platform',
+    description: 'Granular analytics platform bridging digital data and physical retail',
+    url: 'https://github.com/NirmitKhurana10/E-commerce-Brand-Analysis',
+    projectLogo: '/static/images/Company/IKEA-Logo.wine.png',
+    year: '2024',
+    stats: '2x in-store sales, market-level insights',
+    technologies: [
+      'Python',
+      'SQL',
+      'Google Cloud',
+      'GA4',
+      'Power BI',
+      'Excel',
+      'BigQuery',
+    ],
+    highlights: [
+      'Extended analytics from country-level to market and FSA levels',
+      'Unified sales and online analytics data sources',
+      'Doubled in-store sales through data-driven merchandising',
+      'Built scalable cloud architecture for real-time processing',
+    ],
+    description_points: [
+      'Designed and implemented a regional performance tracking analytics framework by <b>integrating EPISOD event data with traditional sales datasets</b>, extending analytics from country-level to PMA and FSA levels to enable localized e-commerce strategies.',
+      'Created comprehensive BI dashboards analyzing <b>customer journey patterns across web, mobile, and in-store kiosks</b>, providing sales teams with actionable product engagement insights that informed inventory management and promotional activities.',
+      'Enabled data-driven merchandising strategies that <b>doubled in-store sales within 2 weeks</b> by identifying high-engagement products online and strategically displaying them in showroom hotspots, demonstrating measurable ROI from online-to-offline insights.',
+    ],
+  },
 ]
 
 export default items
