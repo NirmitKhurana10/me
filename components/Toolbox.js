@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import {
   SiPython,
   SiTableau,
-  SiAmazonwebservices,
-  SiSnowflake,
+  SiDatabricks,
+  SiMicrosoftazure,
   SiMysql,
   SiJira,
 } from 'react-icons/si'
@@ -26,8 +26,8 @@ const tools = [
   { name: 'Tableau', icon: SiTableau, color: '#E97627' },
   { name: 'n8n', icon: TbBolt, color: '#EA4B71' },
   { name: 'SharePoint', icon: TbShare3, color: '#0078D4' },
-  { name: 'AWS', icon: SiAmazonwebservices, color: '#FF9900' },
-  { name: 'Snowflake', icon: SiSnowflake, color: '#29B5E8' },
+  { name: 'Azure', icon: SiMicrosoftazure, color: '#0078D4' },
+  { name: 'Databricks', icon: SiDatabricks, color: '#FF3621' },
   { name: 'Jira', icon: SiJira, color: '#0052CC' },
 ]
 
