@@ -2,7 +2,7 @@ const items = [
   {
     title: 'Operational Waste Mitigation and Demand Forecasting',
     description: 'Automated ETL pipeline reducing operational waste and improving forecast accuracy',
-    url: 'https://github.com/Nirmitkhurana10/Operational-Waste-Mitigation-and-Demand-Forecasting',
+    url: 'https://github.com/NirmitKhurana10/Operational-Waste-Mitigation-Demand-Forecasting-Engine',
     projectLogo: '/static/images/Company/IKEA-Logo.wine.png',
     year: '2025',
     stats: '40% latency ↓, CAD 6K saved/month',
@@ -28,7 +28,7 @@ const items = [
   {
     title: 'Enterprise Resource Automation Pipeline',
     description: 'End-to-end automation framework with n8n and PostgreSQL for real-time inventory alerts',
-    url: 'https://github.com/Nirmitkhurana10/Enterprise-Resource-Automation',
+    url: 'https://github.com/NirmitKhurana10/Enterprise-Resource-Automation-Pipeline',
     projectLogo: '/static/images/Company/IKEA-Logo.wine.png',
     year: '2025',
     stats: '12% overhead ↓, CAD 60K optimized',
