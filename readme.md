@@ -126,7 +126,7 @@ Contributions are welcome! If you have ideas for improvements, bug fixes, or new
 | Social   | Value                                                                    |
 | -------- | ------------------------------------------------------------------------ |
 | Name     | Nirmit Khurana                                                           |
-| Website  | [nirmitkhurana.com](https://nirmitkhurana.com)                          |
+| Website  | [nirmitkhurana.site](https://nirmitkhurana.site)                          |
 | LinkedIn | [nirmit-khurana-3852841a6](https://www.linkedin.com/in/nirmit-khurana-3852841a6/) |
 | GitHub   | [Nirmitkhurana10](https://github.com/Nirmitkhurana10)                   |
 

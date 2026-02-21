@@ -175,40 +175,6 @@ export default function CommandBar(props) {
       ),
     },
     {
-      id: 'recipes',
-      name: 'Recipes',
-      shortcut: ['g', 'r'],
-      keywords: 'go-recipes',
-      section: 'Go To',
-      perform: () => router.push('/recipes'),
-      icon: (
-        <Lottie
-          lottieRef={articlesRef}
-          style={iconSize}
-          animationData={articlesIcon}
-          loop={false}
-          autoplay={false}
-        />
-      ),
-    },
-    {
-      id: 'ideas',
-      name: 'Ideas',
-      shortcut: ['g', 'i'],
-      keywords: 'go-ideas',
-      section: 'Go To',
-      perform: () => router.push('/ideas'),
-      icon: (
-        <Lottie
-          lottieRef={connectionsRef}
-          style={iconSize}
-          animationData={connectionsIcon}
-          loop={false}
-          autoplay={false}
-        />
-      ),
-    },
-    {
       id: 'credits',
       name: 'Credits',
       shortcut: ['g', 'x'],

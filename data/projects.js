@@ -1,11 +1,25 @@
 const items = [
+  // To use a custom cover image, add a `coverImage` field (e.g., coverImage: '/static/images/Projects/cover.png')
+  // and set `VisualType: 'image'`.
   {
     title: 'Operational Waste Mitigation and Demand Forecasting',
+    slug: 'operational-waste-mitigation',
     description: 'Automated ETL pipeline reducing operational waste and improving forecast accuracy',
     url: 'https://github.com/NirmitKhurana10/Operational-Waste-Mitigation-Demand-Forecasting-Engine',
     projectLogo: '/static/images/Company/IKEA-Logo.wine.png',
     year: '2025',
     stats: '40% latency ↓, CAD 6K saved/month',
+    VisualType: 'schematic',
+    StatHighlight: {
+      Value: '15%',
+      Label: 'Waste Reduction'
+    },
+    header: {
+      role: 'Data Engineer',
+      timeline: '3 Months',
+      platform: 'ETL Pipeline',
+      team: 'Ikea Food Team'
+    },
     technologies: [
       'Python',
       'SQL',
@@ -16,30 +30,209 @@ const items = [
     ],
     highlights: [
       'Reduced data latency by 40%',
-      'Improved kitchen forecast accuracy by 20%',
+      'Improved kitchen production forecast accuracy by 20%',
       'Reduced annual operational waste by CAD 6K (15%)',
     ],
     description_points: [
-      'Architected automated ETL processes and data cleansing workflows to synchronize <b>10+ SharePoint sources and 50k+ monthly records</b>, implementing procedures that reduced data latency by 40% and ensured full reporting logic & compliance standards.',
+      'Architected automated ETL processes and data cleansing workflows to synchronize <b>7+ SharePoint sources and 50k+ monthly records</b>, implementing procedures that reduced data latency by 40% and ensured full reporting logic & compliance standards.',
       'Conducted comprehensive process mapping & gap analysis using the newly established dataset structure to improve <b>procurement efficiency by 25% and kitchen forecast accuracy by 20%</b>, ultimately reducing annual operational waste by CAD 6K (15%).',
       'Facilitated stakeholder alignment by delivering DAX-driven semantic models and interactive Power BI dashboards, enabling executive leadership to <b>monitor KPIs across 5+ regional departments and eliminating 15+ hours of manual weekly reconciliation</b>.',
     ],
+    client: 'IKEA',
+    story: {
+      situation:
+        'IKEA’s kitchen department faced significant operational inefficiencies due to fragmented data. Critical inventory and sales data were scattered across **10+ disconnected SharePoint sources and Excel files**, leading to a dazzling 40% data latency. This delay made it impossible to accurately forecast demand, resulting in excessive food waste and lost revenue opportunities.',
+      task: 'My goal was to build a robust, **automated data pipeline** that could ingest, clean, and synchronize this disparate data in real-time. The system needed to provide a "single source of truth" for the procurement team to optimize stock levels and for leadership to monitor regional KPIs without manual intervention.',
+      action:
+        'I architected an automated **ETL (Extract, Transform, Load) pipeline using Python** to scrape and consolidate the SharePoint data sources. I implemented rigorous data cleansing workflows to handle the 50k+ monthly records, ensuring data integrity. On top of this foundation, I built **DAX-driven Power BI dashboards** to visualize the new, clean dataset. I also conducted a gap analysis to identify specific procurement bottlenecks that the new data exposed.',
+      result:
+        'The solution **reduced data latency by 40%**, giving the team near real-time visibility. This improved kitchen forecast accuracy by **20%**, directly leading to a **15% reduction in annual operational waste** (saving ~CAD 6K/year). The automated dashboards also eliminated **15+ hours of manual weekly reconciliation** for the leadership team.',
+    },
+    flowchart: {
+      nodes: [
+        {
+          id: '1',
+          data: { label: 'SharePoint / Excel Sources' },
+          position: { x: 0, y: 80 },
+          style: {
+            background: 'rgba(20,184,166,0.08)',
+            color: '#5eead4',
+            border: '1.5px solid rgba(20,184,166,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '2',
+          data: { label: 'Python ETL Pipeline' },
+          position: { x: 240, y: 80 },
+          style: {
+            background: 'rgba(59,130,246,0.08)',
+            color: '#93c5fd',
+            border: '1.5px solid rgba(59,130,246,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '3',
+          data: { label: 'SQL Database' },
+          position: { x: 480, y: 80 },
+          style: {
+            background: 'rgba(139,92,246,0.08)',
+            color: '#c4b5fd',
+            border: '1.5px solid rgba(139,92,246,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '4',
+          data: { label: 'Power BI Dataset' },
+          position: { x: 700, y: 0 },
+          style: {
+            background: 'rgba(212,162,76,0.08)',
+            color: '#d4a24c',
+            border: '1.5px solid rgba(212,162,76,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '5',
+          data: { label: 'Power BI Dashboards' },
+          position: { x: 700, y: 160 },
+          style: {
+            background: 'rgba(16,185,129,0.08)',
+            color: '#6ee7b7',
+            border: '1.5px solid rgba(16,185,129,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '6',
+          data: { label: 'Stakeholder Reports' },
+          position: { x: 960, y: 80 },
+          style: {
+            background: 'rgba(244,114,182,0.08)',
+            color: '#f9a8d4',
+            border: '1.5px solid rgba(244,114,182,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+      ],
+      edges: [
+        { id: 'e1-2', source: '1', target: '2', animated: true, label: 'Extract' },
+        { id: 'e2-3', source: '2', target: '3', animated: true, label: 'Transform & Load' },
+        { id: 'e3-4', source: '3', target: '4', animated: true, label: 'Query' },
+        { id: 'e3-5', source: '3', target: '5', animated: true, label: 'Direct Connect' },
+        { id: 'e4-5', source: '4', target: '5', animated: true, label: 'Model' },
+        { id: 'e5-6', source: '5', target: '6', label: 'Publish' },
+      ],
+    },
+    stakeholders: [
+      {
+        name: 'Janee D Alfonso',
+        archetype: 'The Manager',
+        role: 'Kitchen Production Manager',
+        goal: 'Accurate daily demand forecasts to minimize food waste and ensure availability during peak hours.',
+        frustrations: [
+          'Relies on outdated, manual Excel spreadsheets for forecasting.',
+          'No visibility into real-time sales data from front-of-house.',
+          'Spends 2+ hours daily reconciling inventory discrepancies.',
+        ],
+      },
+      {
+        name: 'Andrew',
+        archetype: 'The Decision Maker',
+        role: 'Business Navigator',
+        image: '/static/images/avatars/avatar-2.png',
+        goal: 'A centralized dashboard to monitor regional KPIs and make data-driven procurement decisions.',
+        frustrations: [
+          'Data scattered across 10+ SharePoint sites and Excel files.',
+          'Weekly reports are often stale by the time they are compiled.',
+          'Lacks the ability to drill down into specific department metrics.',
+        ],
+      },
+    ],
+    workflow: [
+      { title: 'Strategy', subtitle: 'Ideation & Logic', tools: 'Confluence', icon: 'target' },
+      { title: 'Engineering', subtitle: 'ETL Pipeline', tools: 'Python / SQL', icon: 'code' },
+      { title: 'Analysis', subtitle: 'Gap Analysis', tools: 'Excel / Power Query', icon: 'bar-chart' },
+      { title: 'Visualization', subtitle: 'Dashboarding', tools: 'Power BI', icon: 'pie-chart' },
+    ],
+    system: 'The architecture follows a classic data pipeline pattern: raw data is extracted from disparate sources, cleaned and transformed via Python, loaded into a central SQL database, and visualized through Power BI models for actionable insights.',
+    solution: {
+      dashboard: {
+        image: '/static/images/Projects/powerbi-dashboard.png',
+        description: 'An interactive Power BI dashboard providing real-time visibility into kitchen operations, procurement KPIs, and regional performance metrics.',
+      },
+      metrics: [
+        {
+          kpi: '40%',
+          label: 'Latency Reduction',
+          description: 'Real-time data ingestion replaced manual, batch processing.',
+          chartImage: '/static/images/Projects/chart-latency.png',
+        },
+        {
+          kpi: '20%',
+          label: 'Forecast Accuracy',
+          description: 'Improved predictions through historical trend analysis.',
+          chartImage: '/static/images/Projects/chart-forecast.png',
+        },
+        {
+          kpi: 'CAD 6K',
+          label: 'Annual Savings',
+          description: 'Waste reduction directly translated to cost savings.',
+          chartImage: '/static/images/Projects/chart-savings.png',
+        },
+      ],
+    },
+    retrospective: {
+      outcome: 'Successfully deployed an automated ETL pipeline that eliminated 15+ hours of manual work weekly and provided leadership with real-time dashboards.',
+      learnings: 'Stakeholder alignment is critical. Early buy-in from both the kitchen and business teams ensured the dashboards met practical needs.',
+      futureWork: 'Integrate predictive ML models for proactive demand forecasting. Explore Azure Data Factory for enterprise-grade scheduling.',
+    },
   },
   {
     title: 'Enterprise Resource Automation Pipeline',
-    description: 'End-to-end automation framework with n8n and PostgreSQL for real-time inventory alerts',
+    slug: 'enterprise-resource-automation',
+    description: 'End-to-end automation framework for real-time inventory alerts',
     url: 'https://github.com/NirmitKhurana10/Enterprise-Resource-Automation-Pipeline',
     projectLogo: '/static/images/Company/IKEA-Logo.wine.png',
     year: '2025',
     stats: '12% overhead ↓, CAD 60K optimized',
+    VisualType: 'schematic',
+    StatHighlight: {
+      Value: '12%',
+      Label: 'Overhead Reduction'
+    },
+    header: {
+      role: 'Data Analyst',
+      timeline: '2 Months',
+      platform: 'n8n / supabase',
+      team: 'Operations'
+    },
     technologies: [
       'n8n',
-      'SQL',
-      'Power BI',
-      'Gmail API',
       'Supabase',
-      'SharePoint',
       'Tableau',
+      'Gmail API',
+      'SharePoint',
     ],
     highlights: [
       'Unified 10+ departmental datastreams',
@@ -51,14 +244,211 @@ const items = [
       'Pioneered an end-to-end automation framework utilizing n8n and PostgreSQL to <b>unify 10+ departmental datastreams</b>, transforming business rules into scalable workflows that triggered real-time inventory alerts and secured 100% stock availability.',
       'Orchestrated a centralized HR analytics suite in Tableau to monitor uniform consumption patterns, providing leadership with visibility to <b>optimize a CAD 60K annual resource allocation budget and reducing procurement overhead by 12%</b> through predictive trend analysis.',
     ],
+    client: 'IKEA',
+    story: {
+      situation:
+        'IKEA\'s operations team managed uniform distribution for **10+ departments** through a fully manual process — employees submitted requests via email or in-person, managers tracked approvals on paper, and HR compiled distribution lists in Excel. There was **zero real-time visibility** into stock levels, leading to frequent stockouts, over-ordering, and a reactive procurement cycle that wasted both time and budget.',
+      task: 'My goal was to design an **intelligent, end-to-end automation pipeline** that could handle the full uniform lifecycle — from employee request to manager approval to HR issuance — with zero manual intervention. The system needed real-time inventory tracking, automated notifications, and a centralized analytics layer for budget optimization.',
+      action:
+        'I built an ELT pipeline using **n8n as the orchestration engine** and **Supabase (PostgreSQL)** as the data warehouse. Employee requests flow in via Google Forms, triggering n8n workflows that validate stock availability, route approval emails with one-click webhooks to managers, and automatically update inventory on approval. I implemented ACID-compliant transactions to prevent negative inventory states and built a **Tableau analytics suite** for HR to monitor consumption patterns and optimize the CAD 60K annual uniform budget.',
+      result:
+        'The system achieved **100% stock availability** by eliminating blind spots in inventory tracking. Automated workflows replaced 15+ hours of manual weekly coordination. The Tableau dashboards enabled leadership to **reduce procurement overhead by 12%** and optimize a **CAD 60K annual resource allocation** through predictive trend analysis.',
+    },
+    flowchart: {
+      nodes: [
+        {
+          id: '1',
+          data: { label: 'Google Forms Request' },
+          position: { x: 0, y: 80 },
+          style: {
+            background: 'rgba(20,184,166,0.08)',
+            color: '#5eead4',
+            border: '1.5px solid rgba(20,184,166,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '2',
+          data: { label: 'n8n Workflow Engine' },
+          position: { x: 220, y: 80 },
+          style: {
+            background: 'rgba(59,130,246,0.08)',
+            color: '#93c5fd',
+            border: '1.5px solid rgba(59,130,246,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '3',
+          data: { label: 'Stock Validation' },
+          position: { x: 440, y: 0 },
+          style: {
+            background: 'rgba(234,179,8,0.08)',
+            color: '#fde047',
+            border: '1.5px solid rgba(234,179,8,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '4',
+          data: { label: 'Manager Approval' },
+          position: { x: 440, y: 160 },
+          style: {
+            background: 'rgba(212,162,76,0.08)',
+            color: '#d4a24c',
+            border: '1.5px solid rgba(212,162,76,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '5',
+          data: { label: 'Supabase Database' },
+          position: { x: 680, y: 80 },
+          style: {
+            background: 'rgba(139,92,246,0.08)',
+            color: '#c4b5fd',
+            border: '1.5px solid rgba(139,92,246,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '6',
+          data: { label: 'Weekly HR Report' },
+          position: { x: 900, y: 0 },
+          style: {
+            background: 'rgba(244,114,182,0.08)',
+            color: '#f9a8d4',
+            border: '1.5px solid rgba(244,114,182,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '7',
+          data: { label: 'Tableau Dashboard' },
+          position: { x: 900, y: 160 },
+          style: {
+            background: 'rgba(16,185,129,0.08)',
+            color: '#6ee7b7',
+            border: '1.5px solid rgba(16,185,129,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+      ],
+      edges: [
+        { id: 'e1-2', source: '1', target: '2', animated: true, label: 'Trigger' },
+        { id: 'e2-3', source: '2', target: '3', animated: true, label: 'Validate' },
+        { id: 'e2-4', source: '2', target: '4', animated: true, label: 'Route' },
+        { id: 'e3-5', source: '3', target: '5', animated: true, label: 'Update Stock' },
+        { id: 'e4-5', source: '4', target: '5', animated: true, label: 'Log Decision' },
+        { id: 'e5-6', source: '5', target: '6', label: 'Weekly Digest' },
+        { id: 'e5-7', source: '5', target: '7', label: 'Analyze' },
+      ],
+    },
+    stakeholders: [
+      {
+        name: 'Preeti Puri',
+        archetype: 'The Coordinator',
+        role: 'P&C Operations Lead',
+        goal: 'A streamlined, automated uniform distribution process with full visibility into stock levels and employee requests.',
+        frustrations: [
+          'Compiles weekly distribution lists manually from emails and paper forms.',
+          'No real-time view of current inventory — frequent stockouts discovered too late.',
+          'Spends 3+ hours weekly chasing manager approvals via email threads.',
+        ],
+      },
+      {
+        name: 'Arushi Arushi',
+        archetype: 'The Budget Owner',
+        role: 'P&C Operations Coordinator',
+        goal: 'Data-driven visibility into uniform consumption to optimize the CAD 60K annual procurement budget.',
+        frustrations: [
+          'No analytics on consumption patterns — procurement is purely reactive.',
+          'Cannot identify which departments over-order or under-utilize uniforms.',
+          'Budget approvals are based on guesswork rather than historical trends.',
+        ],
+      },
+    ],
+    workflow: [
+      { title: 'Discovery', subtitle: 'Process Mapping', tools: 'Confluence', icon: 'target' },
+      { title: 'Automation', subtitle: 'Workflow Design', tools: 'n8n / Webhooks', icon: 'code' },
+      { title: 'Data Layer', subtitle: 'Schema & ELT', tools: 'Supabase / SQL', icon: 'bar-chart' },
+      { title: 'Analytics', subtitle: 'Dashboarding', tools: 'Tableau', icon: 'pie-chart' },
+    ],
+    system: 'The architecture follows an event-driven ELT pattern: employee requests trigger n8n workflows that validate inventory, route approval emails via Gmail API webhooks, and load structured data into Supabase (PostgreSQL). A transactions table captures granular event logs enabling downstream analysis in Tableau for budget optimization.',
+    solution: {
+      title: 'Automating the Pipeline',
+      subtitle: 'From manual requests to real-time analytics',
+      dashboard: {
+        image: '/static/images/Projects/hra-tableau-dashboard.png',
+        description: 'A centralized Tableau analytics suite monitoring uniform consumption patterns across 10+ departments — tracking issuance by department, SKU distribution, monthly trends, and stock levels to enable data-driven procurement decisions.',
+      },
+      metrics: [
+        {
+          kpi: '100%',
+          label: 'Stock Availability',
+          description: 'n8n workflows validate inventory in real-time at the point of request — automatically routing out-of-stock notifications or manager approval emails with interactive webhook-based accept/reject buttons.',
+          chartImage: '/static/images/Projects/hra-n8n-workflow.png',
+        },
+        {
+          kpi: '12%',
+          label: 'Overhead Reduction',
+          description: 'The event-driven architecture routes requests through Google Forms → Google Sheets → n8n → Supabase, with Gmail API handling manager approvals and employee notifications — eliminating all manual coordination.',
+          chartImage: '/static/images/Projects/hra-system-architecture.png',
+        },
+        {
+          kpi: 'CAD 60K',
+          label: 'Budget Optimized',
+          description: 'Predictive trend analysis from the Tableau dashboard enabled smarter resource allocation, with granular SKU-level insights replacing guesswork-based procurement cycles.',
+          chartImage: '/static/images/Projects/hra-predictive-trend.png',
+        },
+      ],
+    },
+    retrospective: {
+      outcome: 'Delivered a fully automated uniform management pipeline that eliminated manual coordination across 10+ departments, achieved 100% stock availability, and provided leadership with real-time analytics for budget decisions.',
+      learnings: 'Event-driven architecture with n8n proved ideal for multi-stakeholder approval flows. ACID-compliant transactions in Supabase were critical for preventing negative inventory states in concurrent request scenarios.',
+      futureWork: 'Expand to multi-location inventory support with cross-store transfers. Integrate AI-powered size recommendations based on historical fit data. Add Slack/Teams integration for approval notifications.',
+    },
   },
   {
-    title: 'E-commerce Business Intelligence & Analytics Platform',
+    title: 'E-commerce Business Intelligence & Analytics',
+    slug: 'ecommerce-business-intelligence',
     description: 'Granular analytics platform bridging digital data and physical retail',
     url: 'https://github.com/NirmitKhurana10/E-commerce-Brand-Analysis',
     projectLogo: '/static/images/Company/IKEA-Logo.wine.png',
     year: '2024',
     stats: '2x in-store sales, market-level insights',
+    VisualType: 'schematic',
+    StatHighlight: {
+      Value: '2x',
+      Label: 'In-Store Sales'
+    },
+    header: {
+      role: 'Data Analyst',
+      timeline: '2 Weeks',
+      platform: 'Google Cloud / BigQuery',
+      team: 'Sales & Merch'
+    },
     technologies: [
       'Python',
       'SQL',
@@ -79,6 +469,176 @@ const items = [
       'Created comprehensive BI dashboards analyzing <b>customer journey patterns across web, mobile, and in-store kiosks</b>, providing sales teams with actionable product engagement insights that informed inventory management and promotional activities.',
       'Enabled data-driven merchandising strategies that <b>doubled in-store sales within 2 weeks</b> by identifying high-engagement products online and strategically displaying them in showroom hotspots, demonstrating measurable ROI from online-to-offline insights.',
     ],
+    client: 'IKEA',
+    story: {
+      situation:
+        'IKEA\'s e-commerce analytics were limited to **country-level aggregates**, providing no visibility into regional performance variations. Sales, merchandising, and business navigation teams had no way to understand how online customer behavior differed across markets, cities, or postal areas. This meant promotional strategies and product placement decisions were applied uniformly — ignoring significant regional differences in customer preferences and engagement patterns.',
+      task: 'My goal was to build a **granular analytics platform** that extended e-commerce insights from the country level down to PMA (Primary Market Area) and FSA (Forward Sortation Area) levels. The system needed to unify multiple data sources — including the EPISOD event framework, GA4, and traditional sales datasets — into a single, actionable intelligence layer for cross-functional teams.',
+      action:
+        'I designed the analytics architecture on **Google Cloud Platform**, integrating the EPISOD event framework (which captures real-time interactions from web, mobile apps, in-store kiosks, and digital planners) with traditional sales datasets. I built a multi-level geographic segmentation model (Country → Market → FSA → City) and created comprehensive **BI dashboards** tracking conversion funnels, product engagement, session analytics, and customer journey patterns across all digital touchpoints.',
+      result:
+        'The platform delivered **market-level granularity** that didn\'t exist before, enabling localized e-commerce strategies. The most impactful outcome: by identifying high-engagement products online and strategically displaying them in showroom hotspots, we **doubled in-store sales within 2 weeks** for targeted product categories — demonstrating measurable ROI from online-to-offline insights.',
+    },
+    flowchart: {
+      nodes: [
+        {
+          id: '1',
+          data: { label: 'Customer Touchpoints' },
+          position: { x: 0, y: 80 },
+          style: {
+            background: 'rgba(20,184,166,0.08)',
+            color: '#5eead4',
+            border: '1.5px solid rgba(20,184,166,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '2',
+          data: { label: 'EPISOD Framework' },
+          position: { x: 220, y: 80 },
+          style: {
+            background: 'rgba(59,130,246,0.08)',
+            color: '#93c5fd',
+            border: '1.5px solid rgba(59,130,246,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '3',
+          data: { label: 'GA4 / GCP' },
+          position: { x: 440, y: 0 },
+          style: {
+            background: 'rgba(234,179,8,0.08)',
+            color: '#fde047',
+            border: '1.5px solid rgba(234,179,8,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '4',
+          data: { label: 'EPISOD Analytics' },
+          position: { x: 440, y: 160 },
+          style: {
+            background: 'rgba(139,92,246,0.08)',
+            color: '#c4b5fd',
+            border: '1.5px solid rgba(139,92,246,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '5',
+          data: { label: 'BI Dashboards' },
+          position: { x: 680, y: 80 },
+          style: {
+            background: 'rgba(212,162,76,0.08)',
+            color: '#d4a24c',
+            border: '1.5px solid rgba(212,162,76,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+        {
+          id: '6',
+          data: { label: 'Merchandising Actions' },
+          position: { x: 900, y: 80 },
+          style: {
+            background: 'rgba(16,185,129,0.08)',
+            color: '#6ee7b7',
+            border: '1.5px solid rgba(16,185,129,0.5)',
+            borderRadius: '10px',
+            fontWeight: '600',
+            padding: '12px 16px',
+            fontSize: '12px',
+          },
+        },
+      ],
+      edges: [
+        { id: 'e1-2', source: '1', target: '2', animated: true, label: 'Events' },
+        { id: 'e2-3', source: '2', target: '3', animated: true, label: 'Limited Dataset' },
+        { id: 'e2-4', source: '2', target: '4', animated: true, label: 'Raw Data' },
+        { id: 'e3-5', source: '3', target: '5', animated: true, label: 'Sessions' },
+        { id: 'e4-5', source: '4', target: '5', animated: true, label: 'Engagement' },
+        { id: 'e5-6', source: '5', target: '6', label: 'Insights' },
+      ],
+    },
+    stakeholders: [
+      {
+        name: 'Guido Dicesare',
+        archetype: 'Data Management Leader',
+        role: 'Data Management Lead',
+        goal: 'Actionable product-level insights to decide which items to feature in showroom hotspots for maximum in-store sales.',
+        frustrations: [
+          'No visibility into which products customers engage with online before visiting stores.',
+          'Merchandising decisions based on gut feeling rather than data.',
+          'Cannot correlate online browsing trends with in-store purchase behavior.',
+        ],
+      },
+      {
+        name: 'Naresh Mallevari',
+        archetype: 'The Strategist',
+        role: 'Core area Sales Manager',
+        goal: 'Regional performance data at the market and FSA level to develop localized e-commerce strategies.',
+        frustrations: [
+          'Analytics only available at the country level — cannot identify regional variations.',
+          'No way to benchmark conversion rates across markets or postal areas.',
+          'Cross-functional teams lack a shared data source for aligned decision-making.',
+        ],
+      },
+    ],
+    workflow: [
+      { title: 'Discovery', subtitle: 'Stakeholder Needs', tools: 'Interviews / Confluence', icon: 'target' },
+      { title: 'Engineering', subtitle: 'Data Pipeline', tools: 'GCP / EPISOD / GA4', icon: 'code' },
+      { title: 'Analysis', subtitle: 'Segmentation', tools: 'BigQuery / Python', icon: 'bar-chart' },
+      { title: 'Impact', subtitle: 'Dashboards & Action', tools: 'Power BI / Excel', icon: 'pie-chart' },
+    ],
+    system: 'The architecture follows an event-driven analytics pattern: customer interactions across web, mobile, kiosks, and planners are captured by the EPISOD framework, which distributes raw event data to both GA4 (limited dataset) and EPISOD Analytics for processing. The processed data feeds geographic segmentation models and product engagement analytics, which are surfaced through BI dashboards enabling cross-functional teams to make data-driven merchandising and strategy decisions.',
+    solution: {
+      title: 'Building the Analytics Platform',
+      subtitle: 'Bridging online behavior with in-store merchandising decisions',
+      dashboard: {
+        image: '/static/images/Projects/ecom-episod-framework.png',
+        description: 'An end-to-end data pipeline capturing customer interactions across all digital touchpoints — web products, apps, in-store kiosks, and planners — routing event data through the EPISOD framework and Google Cloud into unified analytics dashboards.',
+      },
+      metrics: [
+        {
+          kpi: '2x',
+          label: 'In-Store Sales',
+          description: 'Mapped the full customer buying journey — from online exploration to in-store purchase — identifying high-engagement products and strategically placing them in showroom hotspots to double in-store sales.',
+          chartImage: '/static/images/Projects/ecom-customer-journey.png',
+        },
+        {
+          kpi: 'PMA/FSA',
+          label: 'Market Granularity',
+          description: 'Extended analytics from country-level aggregates down to PMA and FSA regions, unlocking new insights at the market level for conversion, product engagement, and traffic analysis.',
+          chartImage: '/static/images/Projects/ecom-info-levels.png',
+        },
+        {
+          kpi: '4+',
+          label: 'Omnichannel Sources',
+          description: 'Unified Common Sales Dataset (sales, goals, transactions) with EPISOD event data (funnel conversion, product engagement, sessions by traffic channel) into a single analytics layer.',
+          chartImage: '/static/images/Projects/ecom-datasets.png',
+        },
+      ],
+    },
+    retrospective: {
+      outcome: 'Delivered a granular e-commerce analytics platform that extended insights from country-level to market and FSA levels, unifying omnichannel data sources and enabling data-driven merchandising that doubled in-store sales for targeted products.',
+      learnings: 'The biggest insight was that online engagement data is a leading indicator for in-store demand. Bridging digital analytics with physical retail decisions created immediate, measurable business impact.',
+      futureWork: 'Integrate predictive analytics for sales forecasting. Build ML models for product recommendation optimization. Add real-time alerting for performance anomalies and customer segmentation via cohort analysis.',
+    },
   },
 ]
 

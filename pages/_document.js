@@ -41,6 +41,14 @@ export default class extends Document {
             href="/favicon.png"
           />
 
+          {/* Google Fonts: Outfit (Sans) & Playfair Display (Serif) */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+            rel="stylesheet"
+          />
+
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}

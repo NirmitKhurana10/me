@@ -2,7 +2,6 @@ import { motion, AnimateSharedLayout } from 'framer-motion'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import ProjectItem from '../components/projects/ProjectItem'
-import ProjectModal from '../components/projects/ProjectModal'
 import items from '../data/projects'
 import Base from '../layouts/Base'
 import stripHtml from '../lib/strip-html'
@@ -56,18 +55,11 @@ function Projects(props) {
             >
               <ProjectItem
                 project={project}
-                onClick={() => setSelectedProject(project)}
               />
             </motion.div>
           ))}
         </Grid>
       </AnimateSharedLayout>
-
-      <ProjectModal
-        project={selectedProject}
-        isOpen={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
     </>
   )
 }

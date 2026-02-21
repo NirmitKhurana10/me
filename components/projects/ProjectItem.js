@@ -1,132 +1,134 @@
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React from 'react'
 import { styled } from '../../stitches.config'
+import { CardVisual } from './CardVisual'
+import Link from 'next/link'
 
-export default function ProjectItem({ project, onClick }) {
-    const [isHovered, setIsHovered] = useState(false)
-
+export default function ProjectItem({ project }) {
     return (
-        <ProjectContainer
-            onClick={onClick}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            <AnimContainer>
-                {isHovered && (
-                    <AnimHovered
-                        layoutId="sharedHover"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                        exit={{ opacity: 0 }}
-                    />
-                )}
+        <Link href={`/projects/${project.slug}`} passHref>
+            <CardContainer>
+                <CardVisual
+                    type={project.VisualType || 'schematic'}
+                    src={project.coverImage || project.projectLogo}
+                />
 
-                <Logo src={project.projectLogo} alt={`${project.title} logo`} />
-                <Body>
-                    <Title>{project.title}</Title>
-                    <Stats>{project.stats}</Stats>
-                    <TechList>
-                        {project.technologies?.slice(0, 4).map((tech, index) => (
-                            <TechItem key={index}>{tech}</TechItem>
+                <CardContent>
+                    <Header>
+                        <Title>{project.title}</Title>
+                        <Description>{project.description}</Description>
+                    </Header>
+
+                    <TechStack>
+                        {project.technologies.slice(0, 4).map((tech) => (
+                            <TechBadge key={tech}>{tech}</TechBadge>
                         ))}
-                        {project.technologies?.length > 4 && (
-                            <MoreTech>+{project.technologies.length - 4}</MoreTech>
+                        {project.technologies.length > 4 && (
+                            <TechBadge>+{project.technologies.length - 4}</TechBadge>
                         )}
-                    </TechList>
-                </Body>
-            </AnimContainer>
-        </ProjectContainer>
+                    </TechStack>
+
+                    <Divider />
+
+                    <StatsRow>
+                        <StatValue>{project.StatHighlight?.Value || '0%'}</StatValue>
+                        <StatLabel>{project.StatHighlight?.Label || 'IMPACT'}</StatLabel>
+                    </StatsRow>
+                </CardContent>
+            </CardContainer>
+        </Link>
     )
 }
 
-export const ProjectContainer = styled('div', {
-    display: 'flex',
+const CardContainer = styled('a', {
+    backgroundColor: '#08070b',
+    border: '1px solid #333',
+    borderRadius: '8px',
+    overflow: 'hidden',
     cursor: 'pointer',
-    transition: 'opacity $duration ease-in-out',
-    border: '0',
-    borderRadius: '$borderRadius',
     textDecoration: 'none',
-    width: 'auto',
-    '&:hover': { opacity: 1 },
-})
-
-export const Logo = styled('img', {
-    width: '60px',
-    height: '60px',
-    marginBottom: '10px',
-    marginTop: '10px',
-    objectFit: 'contain',
-    position: 'relative',
-    zIndex: 1,
-})
-
-export const Body = styled('div', {
-    flex: '1 1 auto',
-    textAlign: 'center',
-    position: 'relative',
-    zIndex: 1,
-})
-
-export const Title = styled('p', {
-    color: '$primary',
-    fontSize: '18px',
-    margin: '0',
-    fontWeight: 'bold',
-})
-
-export const Stats = styled('p', {
-    color: '$secondary',
-    fontSize: '14px',
-    margin: '5px 0 0',
-})
-
-export const TechList = styled('div', {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: '6px',
-    marginTop: '10px',
-})
-
-export const TechItem = styled('span', {
-    background: '#18181b',
-    color: '$primary',
-    fontSize: '12px',
-    padding: '4px 8px',
-    borderRadius: '999px',
-})
-
-export const MoreTech = styled('span', {
-    color: '$secondary',
-    fontSize: '12px',
-    alignSelf: 'center',
-})
-
-const AnimContainer = styled(motion.div, {
-    position: 'relative',
-    width: '100%',
+    transition: 'transform 0.2s, border-color 0.2s',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    marginTop: '12px',
-    marginBottom: '12px',
-    padding: '5px',
-    transition: 'transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.2s',
+    height: '100%',
+
     '&:hover': {
-        opacity: 1,
-        transform: 'translateY(-12px) scale(1.07)',
-        boxShadow: '0 20px 48px 0 rgba(31,38,135,0.28)',
+        transform: 'translateY(-4px)',
+        borderColor: '$secondary',
     },
 })
 
-const AnimHovered = styled(motion.span, {
-    position: 'absolute',
-    top: '0',
-    left: '0',
-    right: '0',
-    bottom: '0',
-    background: '$hover',
-    borderRadius: '$borderRadius',
-    zIndex: 0,
+const CardContent = styled('div', {
+    padding: '24px 24px 14px 24px',
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+    backgroundColor: '#0e0e10',
+})
+
+const Header = styled('div', {
+    marginBottom: '12px',
+    flex: 1,
+})
+
+const Title = styled('h3', {
+    fontSize: '20px',
+    fontWeight: '700',
+    color: '$primary',
+    marginBottom: '12px',
+    lineHeight: '1.2',
+    marginTop: 0,
+})
+
+const Description = styled('p', {
+    fontSize: '15px',
+    color: '$secondary',
+    lineHeight: '1.6',
+    marginBottom: '0',
+})
+
+const TechStack = styled('div', {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '8px',
+    marginBottom: '24px',
+})
+
+const TechBadge = styled('span', {
+    fontSize: '11px',
+    color: '$primary',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    padding: '4px 8px',
+    borderRadius: '4px',
+    fontWeight: '500',
+    fontFamily: '$code',
+})
+
+const Divider = styled('div', {
+    height: '1px',
+    backgroundColor: '#333',
+    width: '100%',
+    marginBottom: '20px',
+})
+
+const StatsRow = styled('div', {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '4px',
+})
+
+const StatValue = styled('span', {
+    fontSize: '32px',
+    fontWeight: '600',
+    color: '$green',
+    lineHeight: '1',
+    letterSpacing: '-1px',
+    fontFamily: '$heading',
+})
+
+const StatLabel = styled('span', {
+    fontSize: '12px',
+    color: '$secondary',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    fontWeight: '600',
 })
